@@ -4,9 +4,10 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "terraform-test-12"
-    key    = "terraform.tfstate" # The path within the bucket
-    region = "eu-north-1"
+    bucket         = "terraform-test-12"
+    key            = "terraform.tfstate"
+    region         = "eu-north-1"
+    dynamodb_table = "terraform-lock"
   }
 }
 
